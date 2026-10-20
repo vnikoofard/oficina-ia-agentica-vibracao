@@ -173,3 +173,10 @@ do gabarito — um exemplo de regra **imposta pelo harness**, e não apenas pedi
 Os dados são **sintéticos**: foram gerados a partir de um modelo físico do
 rolamento (impactos que excitam uma ressonância estrutural, harmônicos da rotação
 e ruído realista), para que exista um gabarito exato.
+
+**Desafio para depois da oficina:** refazer o exercício com dados reais do
+[CWRU Bearing Data Center](https://engineering.case.edu/bearingdatacenter), escolhendo
+os registros com a ajuda do estudo de Smith & Randall (2015), *Rolling element bearing
+diagnostics using the Case Western Reserve University data: A benchmark study*. Vários
+registros não são diagnosticáveis nem por especialistas: ali, "inconclusivo" pode ser a
+resposta certa.
