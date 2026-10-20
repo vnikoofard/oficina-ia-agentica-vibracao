@@ -1,5 +1,5 @@
 # Oficina: IA agêntica para resolver problemas de engenharia
-# Testado com Python 3.11, 3.12 e 3.13 (versões mínimas abaixo).
+# Testado com Python 3.10 (com as versões mínimas abaixo), 3.11, 3.12 e 3.13.
 numpy>=1.26
 pandas>=2.1
 scipy>=1.11

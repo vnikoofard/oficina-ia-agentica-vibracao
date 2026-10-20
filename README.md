@@ -4,9 +4,10 @@ Pós-graduação em Engenharia — FEG/UNESP · Prof. Dr. Vahid Nikoofard (FAT/U
 
 Nesta oficina vamos usar um **agente de IA** (um modelo de linguagem que lê arquivos,
 escreve e executa código e verifica o próprio trabalho) para diagnosticar, a partir
-de medições brutas de vibração, o estado dos rolamentos de três motores elétricos. O foco não é a IA "acertar sozinha", e sim
-o **harness**: as instruções, o conhecimento de domínio e os testes que transformam
-um agente genérico em uma ferramenta de engenharia confiável.
+de medições brutas de vibração, o estado dos rolamentos de três motores elétricos.
+O foco não é a IA "acertar sozinha", e sim o **harness**: a especificação, o
+conhecimento de domínio e os testes que transformam um agente genérico em uma
+ferramenta de engenharia confiável.
 
 > **Prepare o computador antes do evento (≈ 30 min).** Quem não conseguir instalar
 > acompanha a demonstração no telão normalmente.
@@ -125,7 +126,6 @@ orquestrador ──► inspetor ──► plano ──► você aprova ──►
 - Depois da inspeção, o orquestrador escreve `notas/plano.md` e **para**. Leia o
   plano e responda (por exemplo, `Aprovado, pode seguir.`) ou peça mudanças. Só
   então ele delega a implementação.
-
 - Os papéis estão em `agentes/*.md` (texto comum, vale para qualquer ferramenta).
 - **Claude Code** carrega os subagentes de `.claude/agents/`; **OpenCode**, de
   `.opencode/agents/`. Os dois apenas apontam para `agentes/*.md`.

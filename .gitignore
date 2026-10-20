@@ -7,3 +7,6 @@ etapas/*/src/
 .claude/settings.local.json
 etapas/*/notas/*.md
 !etapas/*/notas/LEIA-ME.md
+# kit do instrutor (gabarito em texto aberto): nunca versionar
+instrutor/
+instrutor-oficina/
