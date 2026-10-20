@@ -79,6 +79,9 @@ Os dois funcionam com este repositório: ambos leem o arquivo `AGENTS.md`.
    12 meses do Google AI Plus sem custo, com verificação de matrícula. **Atenção:** é
    preciso cadastrar forma de pagamento e o plano é renovado automaticamente com cobrança
    ao final do período se não for cancelado. Não é necessário para a oficina.
+3. Opcional, para quem prefere o terminal: o Antigravity também tem uma CLI, o
+   comando `agy` (instruções em [antigravity.google](https://antigravity.google)).
+   Ela lê o mesmo `AGENTS.md`; rode `agy` dentro da pasta da etapa.
 
 ### 5. Confira se está tudo pronto
 
