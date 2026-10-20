@@ -57,7 +57,8 @@ Para cada motor, determinar:
 - **Trabalhe só com os arquivos desta pasta.** Não leia, liste nem altere nada
   fora dela (pastas vizinhas, pasta-mãe, outros projetos). A única exceção é
   usar o Python do ambiente virtual indicado abaixo. Se o ambiente não existir,
-  não crie outro nem procure um pelo computador: pare e avise.
+  não crie outro nem procure um pelo computador: pare e avise que é preciso
+  criar o `.venv` na raiz do repositório (passo 3 do README).
 - Frequências em Hz; aceleração em g.
 - Nunca altere nada em `dados/`.
 - Bibliotecas disponíveis: `numpy`, `pandas`, `scipy`, `matplotlib`. Não instale pacotes.

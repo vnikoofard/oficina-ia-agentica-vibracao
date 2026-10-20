@@ -118,9 +118,10 @@ características do rolamento.
 
 Na etapa 3 você mesmo pode conferir: `python -m pytest`.
 
-**Recomendado: rode cada etapa numa cópia isolada.** Dentro do repositório, o agente
+**Opcional: rode cada etapa numa cópia isolada.** Dentro do repositório, o agente
 consegue "espiar" as pastas vizinhas — num teste real, um agente rodando a etapa 1
-foi ler a skill da etapa 2. Para evitar isso, a partir da raiz do repositório:
+foi ler a skill da etapa 2. Os `AGENTS.md` pedem que ele fique na própria pasta, mas
+pedir não é impor. Para garantir, a partir da raiz do repositório:
 
 ```bash
 python preparar_etapa.py 1        # cria ~/oficina-isolada/etapa-1/ e mostra o próximo passo
