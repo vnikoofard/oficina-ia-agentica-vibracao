@@ -62,7 +62,7 @@ componente elétrica de 120 Hz, que podem cair perto das frequências de defeito
   (`scipy.signal.butter(..., output="sos")` + `sosfiltfilt`) e calcule a
   **curtose** do sinal filtrado (`scipy.stats.kurtosis(..., fisher=False)`; ruído
   gaussiano dá ≈ 3, impactos dão > 3).
-- Use a banda de **maior curtose**.
+- Use a banda de **maior curtose**. É ela que vai em `faixa_analise_Hz` no `results.json`.
 
 > Armadilha: **não escolha a banda pela energia**. Há uma ressonância de ruído em
 > torno de 7–8 kHz com muita energia e nenhum impacto (curtose ≈ 3); demodular ali

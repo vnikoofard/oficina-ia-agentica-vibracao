@@ -118,6 +118,17 @@ características do rolamento.
 
 Na etapa 3 você mesmo pode conferir: `python -m pytest`.
 
+**Recomendado: rode cada etapa numa cópia isolada.** Dentro do repositório, o agente
+consegue "espiar" as pastas vizinhas — num teste real, um agente rodando a etapa 1
+foi ler a skill da etapa 2. Para evitar isso, a partir da raiz do repositório:
+
+```bash
+python preparar_etapa.py 1        # cria ~/oficina-isolada/etapa-1/ e mostra o próximo passo
+```
+
+e abra o agente na pasta que o script indicar. Para refazer uma etapa do zero, use
+`--substituir`.
+
 ### Etapa 3: orquestração multi-agente
 
 ```
@@ -144,6 +155,7 @@ orquestrador ──► inspetor ──► plano ──► você aprova ──►
 ```
 ├── requirements.txt
 ├── verificar_ambiente.py
+├── preparar_etapa.py    cópia isolada de uma etapa, fora do repositório
 └── etapas/
     ├── 0-sem-harness/   dados/
     ├── 1-instrucoes/    dados/  AGENTS.md  CLAUDE.md

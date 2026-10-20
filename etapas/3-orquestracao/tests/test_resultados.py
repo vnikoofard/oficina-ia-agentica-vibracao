@@ -24,7 +24,7 @@ RAIZ = Path(__file__).resolve().parents[1]
 RES = RAIZ / "resultados"
 MOTORES = ["M1", "M2", "M3"]
 NUMERICOS = ["rotacao_Hz", "BPFO_Hz", "BPFI_Hz"]
-CHAVES = NUMERICOS + ["diagnostico", "frequencia_defeito_Hz", "banda_demodulacao_Hz"]
+CHAVES = NUMERICOS + ["diagnostico", "frequencia_defeito_Hz", "faixa_analise_Hz"]
 DIAGNOSTICOS = {"saudavel", "pista_externa", "pista_interna"}
 FS = 25600.0
 
@@ -81,9 +81,9 @@ def test_formato_json(resultados, m):
     assert r["diagnostico"] in DIAGNOSTICOS, f"{m}.diagnostico deve ser um de {sorted(DIAGNOSTICOS)}"
     f = r["frequencia_defeito_Hz"]
     assert f is None or _num(f), f"{m}.frequencia_defeito_Hz deve ser número ou null"
-    b = r["banda_demodulacao_Hz"]
+    b = r["faixa_analise_Hz"]
     assert isinstance(b, list) and len(b) == 2 and all(_num(v) for v in b), \
-        f"{m}.banda_demodulacao_Hz deve ser [inferior, superior]"
+        f"{m}.faixa_analise_Hz deve ser [inferior, superior]"
 
 
 # ---------------------------------------------------------------- física
@@ -96,8 +96,8 @@ def test_consistencia_fisica(resultados, m):
     assert bo < bi, f"{m}: BPFO deveria ser menor que BPFI"
     assert abs(bo + bi - n * fr) <= 0.002 * n * fr, \
         f"{m}: BPFO + BPFI deveria ser igual a N·f_r (identidade cinemática)"
-    lo, hi = r["banda_demodulacao_Hz"]
-    assert 0 < lo < hi <= FS / 2, f"{m}: banda de demodulação fora de (0, fs/2]"
+    lo, hi = r["faixa_analise_Hz"]
+    assert 0 < lo < hi <= FS / 2, f"{m}: faixa analisada fora de (0, fs/2]"
     f = r["frequencia_defeito_Hz"]
     if r["diagnostico"] == "saudavel":
         assert f is None, f"{m}: motor saudável não tem frequência de defeito (use null)"
@@ -139,12 +139,12 @@ def test_frequencia_defeito(resultados, m):
 
 
 @pytest.mark.parametrize("m", MOTORES)
-def test_banda_demodulacao(resultados, m):
+def test_faixa_analise(resultados, m):
     fn = _gabarito()[m]["ressonancia_Hz"]
     if fn is None:
         return
-    lo, hi = resultados[m]["banda_demodulacao_Hz"]
-    assert lo <= fn <= hi, f"{m}: a banda escolhida não contém a ressonância excitada pelos impactos"
+    lo, hi = resultados[m]["faixa_analise_Hz"]
+    assert lo <= fn <= hi, f"{m}: a faixa analisada não contém a ressonância excitada pelos impactos"
 
 
 # ---------------------------------------------------------------- reprodutibilidade

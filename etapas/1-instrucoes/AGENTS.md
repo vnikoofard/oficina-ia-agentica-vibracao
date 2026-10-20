@@ -36,14 +36,14 @@ Para cada motor, determinar:
        "BPFI_Hz": 0.0,
        "diagnostico": "saudavel | pista_externa | pista_interna",
        "frequencia_defeito_Hz": null,
-       "banda_demodulacao_Hz": [0.0, 0.0]
+       "faixa_analise_Hz": [0.0, 0.0]
      }
    }
    ```
 
    - `frequencia_defeito_Hz` é `null` quando o diagnóstico é `saudavel`.
-   - `banda_demodulacao_Hz` é a faixa de frequências usada na análise do
-     defeito, `[inferior, superior]`, em Hz.
+   - `faixa_analise_Hz` é a faixa de frequências do sinal de aceleração em que
+     você baseou a detecção do defeito, `[inferior, superior]`, em Hz.
 
 3. `resultados/<motor>.png`: para cada motor, um trecho do sinal no tempo, o
    espectro e o gráfico em que o diagnóstico se baseia, com as frequências
@@ -54,6 +54,10 @@ Para cada motor, determinar:
 
 ## Convenções
 
+- **Trabalhe só com os arquivos desta pasta.** Não leia, liste nem altere nada
+  fora dela (pastas vizinhas, pasta-mãe, outros projetos). A única exceção é
+  usar o Python do ambiente virtual indicado abaixo. Se o ambiente não existir,
+  não crie outro nem procure um pelo computador: pare e avise.
 - Frequências em Hz; aceleração em g.
 - Nunca altere nada em `dados/`.
 - Bibliotecas disponíveis: `numpy`, `pandas`, `scipy`, `matplotlib`. Não instale pacotes.
