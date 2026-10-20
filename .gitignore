@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+etapas/*/resultados/
+etapas/*/src/
+.claude/settings.local.json
+etapas/*/notas/*.md
+!etapas/*/notas/LEIA-ME.md
