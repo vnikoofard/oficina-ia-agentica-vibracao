@@ -127,7 +127,8 @@ python preparar_etapa.py 1        # cria ~/oficina-isolada/etapa-1/ e mostra o p
 ```
 
 e abra o agente na pasta que o script indicar. Para refazer uma etapa do zero, use
-`--substituir`.
+`--substituir`. Se você já tem um ambiente virtual com as bibliotecas em outro lugar,
+indique-o com `--venv caminho/do/.venv`.
 
 ### Etapa 3: orquestração multi-agente
 

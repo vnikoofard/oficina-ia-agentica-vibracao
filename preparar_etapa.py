@@ -8,6 +8,7 @@ Uso:
     python preparar_etapa.py 1                 # cria ~/oficina-isolada/etapa-1/
     python preparar_etapa.py 3 --substituir    # apaga a cópia anterior e cria de novo
     python preparar_etapa.py 2 --destino D:/oficina-isolada
+    python preparar_etapa.py 1 --venv ~/lab/.venv   # usa um ambiente que já existe
 
 Estrutura criada (o AGENTS.md procura o Python em ../../.venv):
     <destino>/etapa-N/
@@ -68,9 +69,11 @@ def main() -> None:
 
     venv = achar_venv(a.venv)
     aviso_venv = ""
-    if venv is None:
-        aviso_venv = ("\nAtenção: nenhum ambiente virtual encontrado. Crie o .venv na raiz do "
-                      "repositório (veja o README) e rode este script de novo.")
+    if venv is None or not venv.exists():
+        shutil.rmtree(raiz)
+        sys.exit("Nenhum ambiente virtual encontrado. Crie o .venv na raiz do repositório "
+                 "(veja o README) ou indique um existente com --venv, por exemplo:\n"
+                 f"  python3 preparar_etapa.py {a.etapa} --venv ~/meu-projeto/.venv")
     else:
         try:
             os.symlink(venv, raiz / ".venv", target_is_directory=True)
